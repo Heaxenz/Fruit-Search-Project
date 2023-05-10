@@ -5,14 +5,20 @@ const fruit = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Blackb
 
 function search(str) {
 	let results = [];
-
-	// TODO
+	// for(fru of fruit){
+	// 	fru.toString()
+	// 	console.log(fru.length)
+	// }
 
 	return results;
 }
 
 function searchHandler(e) {
-	// TODO
+	const key = [e.key]
+		return key.map(function(val,i){
+			return val
+	 })
+	
 }
 
 function showSuggestions(results, inputVal) {
@@ -24,5 +30,5 @@ function useSuggestion(e) {
 	// TODO
 }
 
-input.addEventListener('keyup', searchHandler);
-suggestions.addEventListener('click', useSuggestion);
+keysInput = input.addEventListener('keyup', searchHandler)
+suggestions.addEventListener('click', useSuggestion); 
