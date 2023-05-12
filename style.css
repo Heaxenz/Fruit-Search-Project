@@ -4,13 +4,14 @@
 
 :focus {
  /* TODO */
+
 }
 html {
   height:100%;
 }
 
 body {
-  /* TODO */
+ 
 
   background-image: linear-gradient(to right,yellow,rgb(255, 81, 0));
   height:100%;
@@ -19,7 +20,7 @@ body {
 }
 
 input {
- /* TODO */
+ background-color:rgba(255, 191, 108, 0.747);
  
 }
 
@@ -28,31 +29,40 @@ input {
   justify-content: center;
   align-items:center;
   height:100%;
- /* TODO */
+  position:relative;
+  
+ 
 }
 .search-container input,
 .search-container .suggestions {
-  /* TODO */
+  /* border:solid 10px blue;
+   */
 }
 .search-container input {
-  
- /* TODO */
+  padding: 10px;
+  border:none;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.5);
+  font-size:14px;
+  width:280px;
 }
 .search-container .suggestions {
    /* TODO */
+  /* border:red 10px solid;
+  */
+
 }
 
 ul {
-  /* TODO */
+  
 }
 ul.has-suggestions {
   /* TODO */
 }
 ul li {
-  /* TODO */
+  
 }
 ul li:hover {
-  /* TODO */
+  
 }
 
 input {
