@@ -3,53 +3,45 @@ const suggestions = document.querySelector('.suggestions ul');
 
 const fruit = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Blackberry', 'Blackcurrant', 'Blueberry', 'Boysenberry', 'Currant', 'Cherry', 'Coconut', 'Cranberry', 'Cucumber', 'Custard apple', 'Damson', 'Date', 'Dragonfruit', 'Durian', 'Elderberry', 'Feijoa', 'Fig', 'Gooseberry', 'Grape', 'Raisin', 'Grapefruit', 'Guava', 'Honeyberry', 'Huckleberry', 'Jabuticaba', 'Jackfruit', 'Jambul', 'Juniper berry', 'Kiwifruit', 'Kumquat', 'Lemon', 'Lime', 'Loquat', 'Longan', 'Lychee', 'Mango', 'Mangosteen', 'Marionberry', 'Melon', 'Cantaloupe', 'Honeydew', 'Watermelon', 'Miracle fruit', 'Mulberry', 'Nectarine', 'Nance', 'Olive', 'Orange', 'Clementine', 'Mandarine', 'Tangerine', 'Papaya', 'Passionfruit', 'Peach', 'Pear', 'Persimmon', 'Plantain', 'Plum', 'Pineapple', 'Pomegranate', 'Pomelo', 'Quince', 'Raspberry', 'Salmonberry', 'Rambutan', 'Redcurrant', 'Salak', 'Satsuma', 'Soursop', 'Star fruit', 'Strawberry', 'Tamarillo', 'Tamarind', 'Yuzu'];
 
-
-// let newRay = [];
-// for(let fru of fruit){
-// 	console.log(fru)
-// } 
-
 function search(str) {
-	let results = [];
-	for(let i = 0; i < fruit.length; i++){
-		let fruitName = fruit[i].toLowerCase();
-		if(fruitName.includes(str.toLowerCase())){
-			results.push(fruit[i]);
-		}
-
-	}
-	
-	return results;
+  let results = [];
+  for (let i = 0; i < fruit.length; i++) {
+    let fruitName = fruit[i].toLowerCase();
+    if (fruitName.includes(str.toLowerCase())) {
+      results.push(fruit[i]);
+    }
+  }
+  return results;
 }
 
 function searchHandler(e) {
-	let inputVal = e.target.value;
-	let results = search(inputVal);
-	showSuggestions(results,inputVal);
-	
+  let inputVal = e.target.value;
+  let results = search(inputVal);
+  showSuggestions(results, inputVal);
 }
 
 function showSuggestions(results, inputVal) {
-	const suggestions = document.querySelector('.suggestions, ul');
-	let list = ''
-	for(let i = 0; i < results.length; i++){
-		list += `<li>${results[i]}</li>`
-	}
-	suggestions.innerHTML = list
-	if(results.length > 0){
-		suggestions.style.display = 'block';
-	} else{
-		suggestions.style.display = 'none';
-	}
+  const suggestionsList = suggestions;
+  let list = '';
+  for (let i = 0; i < results.length; i++) {
+    list += `<li>${results[i]}</li>`;
+  }
+  suggestionsList.innerHTML = list;
+  if (results.length > 0) {
+    suggestions.style.display = 'block';
+  } else {
+    suggestions.style.display = 'none';
+  }
 }
 
 function useSuggestion(e) {
-	if(e.target.tagName === 'LI'){
-		let suggestion = e.target.textContent;
-		input.value = suggestion;
-		suggestions.style.display = 'none';
-	}
+  if (e.target.tagName === 'LI') {
+    let suggestion = e.target.textContent;
+    input.value = suggestion;
+    suggestions.style.display = 'none';
+  }
 }
 
-keysInput = input.addEventListener('keyup', searchHandler)
-suggestions.addEventListener('click', useSuggestion); 
+input.addEventListener('keyup', searchHandler);
+suggestions.addEventListener('click', useSuggestion);
+

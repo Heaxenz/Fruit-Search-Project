@@ -30,25 +30,30 @@ input {
   align-items:center;
   height:100%;
   position:relative;
-  
  
 }
 .search-container input,
 .search-container .suggestions {
-  /* border:solid 10px blue;
-   */
-}
-.search-container input {
   padding: 10px;
   border:none;
-  box-shadow: 1px 2px 3px rgba(0,0,0,0.5);
   font-size:14px;
   width:280px;
+  
+}
+.search-container input {
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.5);
+ 
 }
 .search-container .suggestions {
    /* TODO */
-  /* border:red 10px solid;
-  */
+  
+  position:absolute;
+  margin-top:0px;
+  padding:none;
+  list-style-type:none;
+  margin-right:100px;
+  margin-top:150px;
+ 
 
 }
 
@@ -57,14 +62,21 @@ ul {
 }
 ul.has-suggestions {
   /* TODO */
+  
 }
 ul li {
+  background-color:rgba(255, 191, 108, 0.747);
+  list-style-type:none;
+  width:280px;
+  padding:10px;
   
+  
+
 }
 ul li:hover {
-  
+  background-color: rgb(248, 99, 0);
 }
 
 input {
-   /* TODO */
+  
 } 
