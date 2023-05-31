@@ -24,7 +24,7 @@ function searchHandler(e) {
 function showSuggestions(results, inputVal) {
 
  
-  
+// How could I use create and append
 // for(let i = 0; i < results.length; i++){
 //   let listItem = document.createElement('li')
 //   listItem.innerHTML = results[i]
@@ -46,6 +46,7 @@ suggestions.innerHTML = list;
     
 }
 
+//function for bold text in list
 
 
 
