@@ -5,38 +5,53 @@ const fruit = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Blackb
 
 function search(str) {
   let results = [];
-  for (let i = 0; i < fruit.length; i++) {
-    let fruitName = fruit[i].toLowerCase();
-    if (fruitName.includes(str.toLowerCase())) {
-      results.push(fruit[i]);
-    }
-  }
-  return results;
+  fruit.forEach((i) =>{
+   if(i.toUpperCase().includes(str.toUpperCase()) ){
+    results.push(i)
+   }
+  })
+  return results
+ 
 }
 
 function searchHandler(e) {
-  let inputVal = e.target.value;
-  let results = search(inputVal);
-  showSuggestions(results, inputVal);
+ let inputVal = e.target.value.toUpperCase()
+ let results = search(inputVal)
+ showSuggestions(results, inputVal)
 }
+ 
 
 function showSuggestions(results, inputVal) {
-  const suggestionsList = suggestions;
-  let list = '';
-  for (let i = 0; i < results.length; i++) {
-    list += `<li>${results[i]}</li>`;
-  }
-  suggestionsList.innerHTML = list;
-  if (results.length > 0) {
+
+ 
+  
+// for(let i = 0; i < results.length; i++){
+//   let listItem = document.createElement('li')
+//   listItem.innerHTML = results[i]
+//    suggestions.appendChild(listItem)
+//   }
+
+let list = '';
+for (let i = 0; i < results.length; i++) {
+  list += `<li>${results[i]}</li>`;
+}
+suggestions.innerHTML = list;
+  if(inputVal.length > 0){
     suggestions.style.display = 'block';
-  } else {
-    suggestions.style.display = 'none';
+
   }
+  if(!inputVal.length > 0){
+    suggestions.style.display = 'none';
+    }
+    
 }
 
+
+
+
 function useSuggestion(e) {
-  if (e.target.tagName === 'LI') {
-    let suggestion = e.target.textContent;
+  if(e.target.tagName === 'LI'){
+    let suggestion = e.target.innerText
     input.value = suggestion;
     suggestions.style.display = 'none';
   }

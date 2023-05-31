@@ -1,36 +1,28 @@
 * {
-  /* box-sizing: border-box; */
-}
-
-:focus {
- /* TODO */
-
-}
-html {
-  height:100%;
-}
-
-body {
- 
-
-  background-image: linear-gradient(to right,yellow,rgb(255, 81, 0));
-  height:100%;
- 
+  box-sizing: border-box; 
+  padding:0px;
   
 }
 
+:focus {
+  background-color:rgba(255, 191, 108, 0.788);
+}
+
+body {
+ display:flex;
+ justify-content: center;
+ align-content: center;
+ padding:25%;
+ background-image: linear-gradient(to right,yellow,rgb(255, 81, 0));
+}
+
 input {
- background-color:rgba(255, 191, 108, 0.747);
- 
+  background-color:rgba(255, 191, 108, 0.747);
+
 }
 
 .search-container {
-  display:flex;
-  justify-content: center;
-  align-items:center;
-  height:100%;
-  position:relative;
- 
+ /* TODO */
 }
 .search-container input,
 .search-container .suggestions {
@@ -42,27 +34,17 @@ input {
 }
 .search-container input {
   box-shadow: 1px 2px 3px rgba(0,0,0,0.5);
- 
 }
 .search-container .suggestions {
    /* TODO */
-  
-  position:absolute;
-  margin-top:0px;
-  padding:none;
-  list-style-type:none;
-  margin-right:100px;
-  margin-top:150px;
- 
-
 }
 
 ul {
-  
+ margin-left:-10px;
+ margin-top:-10px;
 }
 ul.has-suggestions {
-  /* TODO */
-  
+  font-weight:bold;
 }
 ul li {
   background-color:rgba(255, 191, 108, 0.747);
@@ -70,13 +52,11 @@ ul li {
   width:280px;
   padding:10px;
   
-  
-
 }
 ul li:hover {
   background-color: rgb(248, 99, 0);
 }
 
 input {
-  
-} 
+   /* TODO */
+}
